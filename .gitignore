@@ -17,7 +17,6 @@ takeout
 *.iml
 target
 include/generated
-
 __pycache__
 *.pyc
 *.pyo
