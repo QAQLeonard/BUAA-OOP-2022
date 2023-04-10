@@ -1,0 +1,207 @@
+1）
+
+public class Q1_1Test1
+{
+    public static void main(String[] args)
+    {
+        Feeder feeder = new Feeder();
+        Animal cat = new Cat();
+        Animal dog = new Dog();
+        Food fish = new Fish();
+        Food bone = new Bone();
+        feeder.feed(cat, fish);
+        feeder.feed(cat, bone);
+        feeder.feed(dog, fish);
+        feeder.feed(dog, bone);
+    }
+}
+
+class Animal
+{
+    public void eat(Food food)
+    {
+        System.out.println("Animal is eating");
+    }
+
+    public String name;
+};
+
+class Cat extends Animal
+{
+    public Cat()
+    {
+        name = "Cat";
+    }
+
+    public void eat(Food food)
+    {
+        if (food instanceof Fish)
+        {
+            System.out.println("Cat is eating fish");
+        }
+        else
+        {
+            System.out.println("Cat don't like bone");
+        }
+    }
+}
+
+class Dog extends Animal
+{
+    public Dog()
+    {
+        name = "Dog";
+    }
+
+    public void eat(Food food)
+    {
+        if (food instanceof Bone)
+        {
+            System.out.println("Dog is eating bone");
+        }
+        else
+        {
+            System.out.println("Dog don't like fish");
+        }
+    }
+};
+
+class Feeder
+{
+    public void feed(Animal animal, Food food)
+    {
+        System.out.println("Feeding " + animal.name + " with " + food.name);
+        animal.eat(food);
+    }
+}
+
+class Food
+{
+    public String name;
+};
+
+class Fish extends Food
+{
+    public Fish()
+    {
+        name = "Fish";
+    }
+}
+
+class Bone extends Food
+{
+    public Bone()
+    {
+        name = "Bone";
+    }
+}
+2）
+
+public class Q1_1Test2
+{
+    public static void main(String[] args)
+    {
+        Feeder feeder = new Feeder();
+        Animal cat = new Cat();
+        Animal dog = new Dog();
+        Food fish = new Fish();
+        Food bone = new Bone();
+        feeder.feed(cat, fish);
+        feeder.feed(cat, bone);
+        feeder.feed(dog, fish);
+        feeder.feed(dog, bone);
+    }
+}
+
+class Animal
+{
+    public void eat(Food food)
+    {
+        System.out.println("Animal is eating");
+    }
+
+    public String name;
+};
+
+class Cat extends Animal
+{
+    public Cat()
+    {
+        name = "Cat";
+    }
+
+    public void eat(Food food)
+    {
+        if (food instanceof Fish)
+        {
+            System.out.println("Cat is eating fish");
+        }
+        else
+        {
+            System.out.println("Cat don't like bone");
+        }
+    }
+}
+
+class Dog extends Animal
+{
+    public Dog()
+    {
+        name = "Dog";
+    }
+
+    public void eat(Food food)
+    {
+        if (food instanceof Bone)
+        {
+            System.out.println("Dog is eating bone");
+        }
+        else
+        {
+            System.out.println("Dog don't like fish");
+        }
+    }
+};
+
+class Feeder
+{
+    public void feed(Animal animal, Food food)
+    {
+        System.out.println("Feeding " + animal.name + " with " + food.getname());
+        animal.eat(food);
+    }
+}
+
+interface Food
+{
+    String getname();
+};
+
+class Fish extends Animal implements Food
+{
+    @Override
+    public String getname()
+    {
+        return "fish";
+    }
+}
+
+class Bone implements Food
+{
+    @Override
+    public String getname()
+    {
+        return "Bone";
+    }
+
+}
+3）第二种。因为第二种Food以接口实现，而Fish即是动物也是食物。从而可以使鱼同时实现Food接口和为Animal的子类
+
+4）向上映射：将派生类的对象、引用或指针转变为基类对象、引用、指针的活动被称为向上映射。
+
+向下映射：而基类对象转换成派生类对象的活动被称为向下映射。
+
+向下转型准确性如果父类对象不是子类对象的实例，就会发生编译器错误。最好先用instanceof检验
+
+向上转型时子类注意子类隐藏的变量方法和重写的变量方法，向上转型安全，但无法再调用子类中新的变量和方法
+

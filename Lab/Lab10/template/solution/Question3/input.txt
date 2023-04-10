@@ -1,0 +1,9 @@
+File f = new File("./java.oop");
+System.out.println("当前文件是：" +f);// 这是一条注释
+//这是另一条注释
+System.out.println("判断是否存在："+f.exists());
+/*
+这些还是注释
+*/
+System.out.println("判断是否是文件夹："+f.isDirectory());
+       //这是个位置有点奇怪的注释

@@ -1,0 +1,2 @@
+javac -cp ./src/ -d ./bin src/test/BTest.java
+java -ea -cp ./bin/ test.BTest

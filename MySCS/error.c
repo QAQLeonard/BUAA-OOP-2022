@@ -1,0 +1,9 @@
+file not found
+fn start() -> Result<(), Box<dyn Error>> {
+    let mut app = App::new();
+    app.add_system(hello_world.system());
+    app.run();
+    Ok(())
+}
+arguments illegal
+arguments illegal
