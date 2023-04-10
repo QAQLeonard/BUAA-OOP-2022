@@ -17,6 +17,7 @@ takeout
 *.iml
 target
 include/generated
+*_javadoc/
 __pycache__
 *.pyc
 *.pyo
